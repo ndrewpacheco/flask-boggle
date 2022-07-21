@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/app.css" />
+    <title>Boggle</title>
+  </head>
+  <body>
+    <h1>Boggle</h1>
+    <div class="board">
+      {% for row in board %} {% for letter in row %}
+      <div class="letter">{{letter}}</div>
+      {% endfor %} {% endfor %}
+    </div>
+    <button id="start-game">Start Game</button>
+    <form action="/check-word" for="guess" method="post" id="guess-form">
+      <label for="guess"
+        >Submit a guess: <input type="text" name="guess"
+      /></label>
+      <button>Submit</button>
+    </form>
+    <div class="info">
+      <h3>Response:</h3>
+      <p id="response"></p>
+      <h3>Score:</h3>
+      <p id="score"></p>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  
+  max-width: 900px;
+}
+
+
+.letter {
+  border: 1px solid black;
+  text-align: center;
+  padding: 30px;
+}
+
+.info * {
+  display: inline-block;
+}
